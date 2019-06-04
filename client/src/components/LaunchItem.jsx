@@ -1,4 +1,6 @@
 import React from 'react';
+import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 class LaunchItem extends React.Component {
   render() {
@@ -14,10 +16,12 @@ class LaunchItem extends React.Component {
       <div className="row">
         <div>
           <h4>Mission : {mission_name} </h4>
-          <p>Date: {launch_date_local} </p>
+          <p>
+            Date: <Moment format="YYYY-MM-DD HH:mm">{launch_date_local}</Moment>{' '}
+          </p>
         </div>
         <div>
-          <button>Launch Details</button>
+          <Link to={`/launch/${flight_number}`}>Launch Details</Link>
         </div>
       </div>
     );
